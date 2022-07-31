@@ -1,6 +1,10 @@
 <template>
   <div>
     <shopcarItem></shopcarItem>
+    <shopcarItem></shopcarItem>
+    <shopcarItem></shopcarItem>
+    <shopcarItem></shopcarItem>
+    <shopcarItem></shopcarItem>
   </div>
 </template>
 

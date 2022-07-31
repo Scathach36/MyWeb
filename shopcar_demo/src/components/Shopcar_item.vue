@@ -7,17 +7,22 @@
       <img src="" alt="" />
     </div>
     <div class="item_info">
-      <h2 class="item_title">不知道什么玩意不知道什么玩意不知道什么玩意</h2>
+      <h2 class="item_title">12345</h2>
       <div class="item_priceAndNum">
         <span class="item_price">114514</span>
-        <span>另一个组件</span>
+        <span>
+          <ShopcarNumber></ShopcarNumber>
+        </span>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-export default {};
+import ShopcarNumber from './Shopcar_Number.vue';
+export default {
+  components:{ShopcarNumber}
+};
 </script>
 
 <style lang="less" scoped>
@@ -43,17 +48,23 @@ export default {};
     display: flex;
     flex-direction: column;
     height: 150px;
-    background-color: #eee;
 
     .item_title {
         flex: 2;
-        font-size: 18px;
+        font-size: 16px;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
 
     .item_priceAndNum {
         flex: 1;
         display: flex;
-        justify-content: space-between;
+        justify-content: start;
+        align-items: center;
+
+        .item_price {
+          margin-right: 10px;
+        }
     }
   }
 }

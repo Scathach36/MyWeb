@@ -33,6 +33,7 @@ footer {
   font-size: 12px;
   width: 100%;
   border-top: 1px solid #eee;
+  background-color: #fff;
 
   #totalPrice {
     color:red;

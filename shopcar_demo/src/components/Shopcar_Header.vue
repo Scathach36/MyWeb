@@ -14,8 +14,8 @@ header {
   position: fixed;
   top: 0;left: 0;
   width: 100%;
-  min-height: 20px;
-  line-height: 20px;
+  height: 30px;
+  line-height: 30px;
   font-size: 20px;
   letter-spacing: 8px;
   text-align: center;
