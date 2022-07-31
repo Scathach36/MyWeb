@@ -1,6 +1,6 @@
 <template>
   <div>
-    <ShopcarHeader></ShopcarHeader>
+    <ShopcarHeader backgroundColor="red" color="white" title="购物车"></ShopcarHeader>
     <ShopcarMain></ShopcarMain>
     <ShopcarFooter></ShopcarFooter>
   </div>
