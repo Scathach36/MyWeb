@@ -1,17 +1,21 @@
 <template>
   <div class="shopcar_item">
     <div class="checkbox">
-      <input type="checkbox" value="" />
+      <input
+        type="checkbox"
+        v-model="LocalItem.goods_state"
+        :id="LocalItem.id"
+      />
     </div>
     <div class="item_img">
-      <img src="" alt="" />
+      <label :for="LocalItem.id"><img :src="LocalItem.goods_img" /></label>
     </div>
     <div class="item_info">
-      <h2 class="item_title">12345</h2>
+      <h2 class="item_title">{{ LocalItem.goods_name }}</h2>
       <div class="item_priceAndNum">
-        <span class="item_price">114514</span>
+        <span class="item_price">{{ LocalItem.goods_price }}</span>
         <span>
-          <ShopcarNumber></ShopcarNumber>
+          <ShopcarNumber :item="item"></ShopcarNumber>
         </span>
       </div>
     </div>
@@ -19,9 +23,17 @@
 </template>
 
 <script>
-import ShopcarNumber from './Shopcar_Number.vue';
+import ShopcarNumber from "./Shopcar_Number.vue";
 export default {
-  components:{ShopcarNumber}
+  data() {
+    return {
+      LocalItem: this.item,
+    };
+  },
+  components: { ShopcarNumber },
+  props: {
+    item: Object,
+  },
 };
 </script>
 
@@ -41,6 +53,15 @@ export default {
     margin: 0 6px;
     background-color: pink;
     border-radius: 10px;
+    label {
+      width: 100%;
+      height: 100%;
+      img {
+        width: 100%;
+        height: 100%;
+        border-radius: 10px;
+      }
+    }
   }
 
   .item_info {
@@ -50,21 +71,26 @@ export default {
     height: 150px;
 
     .item_title {
-        flex: 2;
-        font-size: 16px;
-        overflow: hidden;
-        text-overflow: ellipsis;
+      flex: 2;
+      font-size: 16px;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
 
     .item_priceAndNum {
-        flex: 1;
-        display: flex;
-        justify-content: start;
-        align-items: center;
+      flex: 1;
+      display: flex;
+      justify-content: start;
+      align-items: center;
+      color: red;
 
-        .item_price {
-          margin-right: 10px;
-        }
+      .item_price {
+        margin-right: 10px;
+      }
+
+      .item_price::before {
+        content: "￥";
+      }
     }
   }
 }
